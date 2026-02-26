@@ -22,5 +22,9 @@ Put your individual final Devlog here.
 
 ## Open-Source Assets
 Cite any open-source assets here. Put them in a LIST, and use correctly formatted LINKS.
-[Old-Cartoon Background Music](https://assetstore.unity.com/packages/audio/music/orchestral/old-cartoon-music-pack-free-277325)
-[Grass Material](https://assetstore.unity.com/packages/2d/textures-materials/floors/pbr-ground-materials-1-dirt-grass-85402)
+
+- [Old-Cartoon Background Music](https://assetstore.unity.com/packages/audio/music/orchestral/old-cartoon-music-pack-free-277325)
+- [Grass Material](https://assetstore.unity.com/packages/2d/textures-materials/glass/stylized-grass-texture-153153)
+- [Trees](https://assetstore.unity.com/search#q=trees&nf-ec_price_filter=0...0)
+- [Rocks and Bushes](https://assetstore.unity.com/packages/3d/environments/landscapes/low-poly-nature-pack-lite-40444)
+- [Sun Model](https://assetstore.unity.com/packages/3d/environments/sci-fi/cosmokit-stylized-low-poly-planets-142199)
