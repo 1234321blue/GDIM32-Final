@@ -1176,9 +1176,9 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 4.515923
+  m_Height: 4.9745035
   m_Direction: 1
-  m_Center: {x: 0, y: 1.7579567, z: 0}
+  m_Center: {x: 0, y: 1.5286665, z: 0}
 --- !u!114 &104001239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2713,6 +2713,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 72149837}
     m_Modifications:
+    - target: {fileID: 2845922512185839032, guid: bc0a4a600862dd84383d2f7403f90f0c, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4961582575699213788, guid: bc0a4a600862dd84383d2f7403f90f0c, type: 3}
       propertyPath: m_Name
       value: Microwave
@@ -2772,7 +2776,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4961582575699213788, guid: bc0a4a600862dd84383d2f7403f90f0c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1825759290}
   m_SourcePrefab: {fileID: 100100000, guid: bc0a4a600862dd84383d2f7403f90f0c, type: 3}
 --- !u!1001 &296934683
 PrefabInstance:
@@ -13228,6 +13235,32 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 254e0b94a7646cb48b924681efe07c0f, type: 3}
+--- !u!1 &1825759285 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4961582575699213788, guid: bc0a4a600862dd84383d2f7403f90f0c, type: 3}
+  m_PrefabInstance: {fileID: 281083350}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1825759290
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825759285}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.5189027, y: 0.28163266, z: 0.39896137}
+  m_Center: {x: -0.00000029802322, y: 0.14081633, z: 0.000000119209275}
 --- !u!1001 &1841936183
 PrefabInstance:
   m_ObjectHideFlags: 0
