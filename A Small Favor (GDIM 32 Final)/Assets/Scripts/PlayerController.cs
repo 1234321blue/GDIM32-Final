@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -8,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float mouseSensitivity = 200f;
     public float interactRange = 3f;
     public Transform holdPoint;
+    public TextMeshProUGUI interactText;
 
     private GameObject heldItem;
 
@@ -25,6 +27,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         HandleMouseLook();
+
+        CheckForInteractable();
 
         if (Input.GetKeyDown(KeyCode.E))
         {
@@ -118,5 +122,22 @@ public class PlayerController : MonoBehaviour
         }
 
         heldItem = null;
+    }
+
+    void CheckForInteractable()
+    {
+        Ray ray = new Ray(playerCamera.position, playerCamera.forward);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, interactRange))
+        {
+            if (hit.collider.CompareTag("item") && heldItem == null)
+            {
+                interactText.gameObject.SetActive(true);
+                return;
+            }
+        }
+
+        interactText.gameObject.SetActive(false);
     }
 }
