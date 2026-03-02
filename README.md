@@ -1,9 +1,13 @@
 # GDIM32-Final
 ## Check-In
-### Team Member Name 1
-Gael Porras
-### Team Member Name 2
-Jeremiah Yang
+### Group Devlog
+Put your group Devlog here.
+
+
+### Gael Porras Devlog
+Put your individual final Devlog here.
+### Jeremiah Yang Devlog
+Put your individual final Devlog here.
 
 
 ## Final Submission
@@ -15,8 +19,7 @@ Put your group Devlog here.
 Put your individual final Devlog here.
 ### Team Member Name 2
 Put your individual final Devlog here.
-### Team Member Name 3
-Put your individual final Devlog here.
+
 
 ## Open-Source Assets
 Cite any open-source assets here. Put them in a LIST, and use correctly formatted LINKS.
