@@ -3,7 +3,7 @@
 ### Team Member Name 1
 Gael Porras
 ### Team Member Name 2
-Put your individual check-in Devlog here.
+Jeremiah Yang
 
 
 ## Final Submission
