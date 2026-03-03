@@ -9,6 +9,8 @@ public class NPC : MonoBehaviour
     [SerializeField] private float checkDistance = 1f;
     [SerializeField] private Dialogue startingDialogue;
     [SerializeField] private DialogueUI dialogueUI;
+    [SerializeField] private PlayerController player;
+    [SerializeField] private GameObject interactableText;
     private Mood npcMood;
     public int interactionChain = 0;
     private Dialogue currentNode;
@@ -36,12 +38,12 @@ public class NPC : MonoBehaviour
             {
                 if(!waitingForPlayerResponse && Input.GetKeyDown(KeyCode.Space))
                 {
+                    interactableText.SetActive(false);
                     AdvanceDialogue();
                 }
-            
-                else
+                else if(!runningDialogue)
                 {
-                    EndDialogue();
+                    interactableText.SetActive(true);    
                 }
             }
 
@@ -50,10 +52,21 @@ public class NPC : MonoBehaviour
                 
             }
         }
+        else
+        {
+            EndDialogue();
+            interactableText.SetActive(false);
+        }
     }
         private void AdvanceDialogue ()
     {
         runningDialogue = true;
+        if(runningDialogue)
+        {
+            player.enabled=false;
+            Cursor.lockState = CursorLockMode.None;
+            interactableText.SetActive(false);
+        }
 
         if(currentLine < currentNode.npcDialogue.Length)
         {
@@ -81,6 +94,8 @@ public class NPC : MonoBehaviour
         currentNode = startingDialogue;
         currentLine = 0;
         dialogueUI.HideDialogue();
+        player.enabled=true;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public void SelectedOption(int option)
