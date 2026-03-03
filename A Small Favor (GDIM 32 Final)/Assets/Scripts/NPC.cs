@@ -9,8 +9,8 @@ public class NPC : MonoBehaviour
     [SerializeField] private float checkDistance = 1f;
     [SerializeField] private Dialogue startingDialogue;
     [SerializeField] private DialogueUI dialogueUI;
-    public Mood npcMood;
-    public int interactionChain;
+    private Mood npcMood;
+    public int interactionChain = 0;
     private Dialogue currentNode;
     private int currentLine = 0;
     private bool runningDialogue;
@@ -45,10 +45,10 @@ public class NPC : MonoBehaviour
                 }
             }
 
-        else if (interactionChain==1)
-        {
+            else if (interactionChain==1)
+            {
                 
-        }
+            }
         }
     }
         private void AdvanceDialogue ()
@@ -65,7 +65,7 @@ public class NPC : MonoBehaviour
         {
             // show player dialogue options, if there are any
             waitingForPlayerResponse = true;
-            dialogueUI.ShowPlayerOptions();
+            dialogueUI.ShowPlayerOptions(currentNode.playerResponses);
         }
         else 
         {
