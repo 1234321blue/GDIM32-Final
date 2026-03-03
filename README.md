@@ -1,7 +1,7 @@
 # GDIM32-Final
 ## Check-In
 ### Group Devlog
-Put your group Devlog here.
+Our project uses raycasting to implement the item interaction system. The main feature that requires this is our pickup mechanic, where the player can press E to collect an object they are looking at. In our TryPickup() method, we create a Ray using new Ray(playerCamera.position, playerCamera.forward). This uses the camera’s forward direction vector to project a line into the world, and we call Physics.Raycast(ray, out hit, interactRange) to detect objects in that direction within a certain distance. The math behind this works because the ray uses a normalized direction vector to calculate positions along a line in 3D space like shown in the demo in class. If the ray intersects with a collider tagged "item", we store the object in the heldItem variable and attach it to the holdPoint. Raycasting is relevant in our project because it allows us to detect what the player is looking at using direction vectors instead of relying on trigger zones which makes the interaction system more precise and scalable. This use of vector direction and spatial detection is important to how our first-person interaction system works/functions.
 
 
 ### Gael Porras Devlog
