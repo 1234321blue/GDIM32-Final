@@ -5,13 +5,13 @@ using TMPro;
 
 public class DialogueUI : MonoBehaviour
 {
-[SerializeField] private TMP_Text _npcText;
+    [SerializeField] private TMP_Text _npcText;
     [SerializeField] private GameObject _npcDialogue;
     [SerializeField] private GameObject _playerOptions;
-    [SerializeField] private GameObject _playerMultiOptions;
+    /*[SerializeField] private GameObject _playerMultiOptions;
     [SerializeField] private TMP_Text _option1;
     [SerializeField] private TMP_Text _option2;
-    [SerializeField] private TMP_Text _option3;
+    [SerializeField] private TMP_Text _option3;*/
 
     public void ShowDialogue(string dialogue)
     {
@@ -19,7 +19,7 @@ public class DialogueUI : MonoBehaviour
 
         _npcDialogue.SetActive(true);
         _playerOptions.SetActive(false);
-        _playerMultiOptions.SetActive(false);
+        //_playerMultiOptions.SetActive(false);
 
         _npcText.text = dialogue;
     }
@@ -30,11 +30,10 @@ public class DialogueUI : MonoBehaviour
 
         _npcDialogue.SetActive(false);
         _playerOptions.SetActive(true);
-        _playerMultiOptions.SetActive(false);
+       //_playerMultiOptions.SetActive(false);
     }
 
-    // note: this only works for up to 3 dialogue options at a time currently
-    // if you want to make more possible, you may have to get crafty with the UI... :)
+    /*
     public void ShowPlayerOptions(string[] options)
     {
         gameObject.SetActive(true);
@@ -65,7 +64,7 @@ public class DialogueUI : MonoBehaviour
             _option3.transform.parent.gameObject.SetActive(false);
         }
     }
-
+    */
     public void HideDialogue()
     {
         _playerOptions.SetActive(false);
