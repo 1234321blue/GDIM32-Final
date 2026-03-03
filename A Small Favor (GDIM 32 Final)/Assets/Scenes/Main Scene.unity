@@ -14601,7 +14601,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2842599191907163398, guid: ea09380a209db4f44a868824350d2ddd, type: 3}
       propertyPath: m_Name
-      value: Player(test)
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5759719821048404134, guid: ea09380a209db4f44a868824350d2ddd, type: 3}
       propertyPath: interactText
