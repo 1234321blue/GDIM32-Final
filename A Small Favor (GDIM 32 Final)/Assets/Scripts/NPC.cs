@@ -9,6 +9,8 @@ public class NPC : MonoBehaviour
     [SerializeField] private float checkDistance = 1f;
     public Mood npcMood;
     public int interactionChain;
+    [SerializeField] private Dialogue dialogue;
+    [SerializeField] 
 
     void Start()
     {
