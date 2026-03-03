@@ -15744,6 +15744,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 3473189778661956830, guid: ea09380a209db4f44a868824350d2ddd, type: 3}
+      propertyPath: m_Mass
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5759719821048404134, guid: ea09380a209db4f44a868824350d2ddd, type: 3}
       propertyPath: interactText
       value: 

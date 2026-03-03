@@ -21,6 +21,7 @@ public class NPC : MonoBehaviour
     void Start()
     {
         currentNode = startingDialogue;
+        Debug.Log("testing github stupid github");
     }
 
     void Update()
@@ -89,6 +90,7 @@ public class NPC : MonoBehaviour
 
     private void EndDialogue ()
     {
+        // testing github stupid stupid github
         runningDialogue = false;
         waitingForPlayerResponse = false;
         currentNode = startingDialogue;
