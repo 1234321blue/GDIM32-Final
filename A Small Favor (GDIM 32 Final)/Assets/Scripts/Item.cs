@@ -1,8 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public abstract class Item : MonoBehaviour
+public class Item : MonoBehaviour
 {
-    protected abstract void Use();
+    public bool held;
+    [SerializeField] protected Dialogue uniqueDialogue;
+    protected NPC npc;
+    public virtual void Use()
+    {
+        Debug.Log("Errr");
+    }
 }

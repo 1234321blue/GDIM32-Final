@@ -7,7 +7,7 @@ public class NPC : MonoBehaviour
     [SerializeField] private Transform npcTransform;
     [SerializeField] private float checkRad = 1f;
     [SerializeField] private float checkDistance = 1f;
-    [SerializeField] private Dialogue startingDialogue;
+    public Dialogue startingDialogue;
     [SerializeField] private DialogueUI dialogueUI;
     [SerializeField] private PlayerController player;
     [SerializeField] private GameObject interactableText;
@@ -21,7 +21,6 @@ public class NPC : MonoBehaviour
     void Start()
     {
         currentNode = startingDialogue;
-        Debug.Log("testing github stupid github");
     }
 
     void Update()
@@ -90,7 +89,6 @@ public class NPC : MonoBehaviour
 
     private void EndDialogue ()
     {
-        // testing github stupid stupid github
         runningDialogue = false;
         waitingForPlayerResponse = false;
         currentNode = startingDialogue;

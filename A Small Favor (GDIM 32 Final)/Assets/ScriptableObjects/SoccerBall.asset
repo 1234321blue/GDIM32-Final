@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fb2552b0b02c4206bd25983fb7e2987, type: 3}
+  m_Name: SoccerBall
+  m_EditorClassIdentifier: 
+  npcDialogue:
+  - oh
+  - thats not what i wanted
+  - but thanks i guess
+  playerResponses:
+  - ur welcome :)
+  - not enough milk for the two of us bud
+  - u ungrateful son of a...
+  npcReplies:
+  - {fileID: 11400000, guid: d13a8a62888ff46d58416ec07b430fb9, type: 2}
+  - {fileID: 11400000, guid: 05781564db1d34e27b9b0b4f904ecc01, type: 2}
+  - {fileID: 11400000, guid: cefd4e56083ba438d9f3d3673bf6dc5c, type: 2}

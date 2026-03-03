@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float interactRange = 3f;
     public Transform holdPoint;
     public TextMeshProUGUI interactText;
+    public TextMeshProUGUI npcInteractText;
 
     private GameObject heldItem;
 
@@ -87,6 +88,9 @@ public class PlayerController : MonoBehaviour
             {
                 heldItem = hit.collider.gameObject;
 
+                Item item = heldItem.GetComponent<Item>();
+                item.held=true;
+
             Rigidbody itemRb = heldItem.GetComponent<Rigidbody>();
             if (itemRb != null)
             {
@@ -107,6 +111,9 @@ public class PlayerController : MonoBehaviour
     void DropItem()
     {
         if (heldItem == null) return;
+
+        Item item = heldItem.GetComponent<Item>();
+        item.held=false;
 
         heldItem.transform.SetParent(null);
 
@@ -136,8 +143,14 @@ public class PlayerController : MonoBehaviour
                 interactText.gameObject.SetActive(true);
                 return;
             }
+            if (hit.collider.CompareTag("npc"))
+            {
+                npcInteractText.gameObject.SetActive(true);
+                return;
+            }
         }
 
         interactText.gameObject.SetActive(false);
+        npcInteractText.gameObject.SetActive(false);
     }
 }
