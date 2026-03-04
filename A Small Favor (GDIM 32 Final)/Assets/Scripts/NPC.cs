@@ -9,10 +9,10 @@ public class NPC : MonoBehaviour
     [SerializeField] private float checkDistance = 1f;
     public Dialogue startingDialogue;
     [SerializeField] private DialogueUI dialogueUI;
-    [SerializeField] private PlayerController player;
+    //[SerializeField] private PlayerController player;
     [SerializeField] private GameObject interactableText;
     private Mood npcMood;
-    public int interactionChain = 0;
+    //public int interactionChain = 0;
     private Dialogue currentNode;
     private int currentLine = 0;
     private bool runningDialogue;
@@ -34,8 +34,8 @@ public class NPC : MonoBehaviour
         bool playerThere = Physics.SphereCast(npcTransform.position, checkRad,npcTransform.forward, out hit, checkDistance);
         if (playerThere)
         {
-            if (interactionChain==0)
-            {
+            //if (interactionChain==0)
+            //{
                 if(!waitingForPlayerResponse && Input.GetKeyDown(KeyCode.Space))
                 {
                     interactableText.SetActive(false);
@@ -45,12 +45,12 @@ public class NPC : MonoBehaviour
                 {
                     interactableText.SetActive(true);    
                 }
-            }
+            //}
 
-            else if (interactionChain==1)
+            /*else if (interactionChain==1)
             {
                 
-            }
+            }*/
         }
         else
         {
@@ -58,12 +58,12 @@ public class NPC : MonoBehaviour
             interactableText.SetActive(false);
         }
     }
-        private void AdvanceDialogue ()
+        public void AdvanceDialogue ()
     {
         runningDialogue = true;
         if(runningDialogue)
         {
-            player.enabled=false;
+            Locator.Instance.player.enabled=false;
             Cursor.lockState = CursorLockMode.None;
             interactableText.SetActive(false);
         }
@@ -94,7 +94,7 @@ public class NPC : MonoBehaviour
         currentNode = startingDialogue;
         currentLine = 0;
         dialogueUI.HideDialogue();
-        player.enabled=true;
+        Locator.Instance.player.enabled=true;
         Cursor.lockState = CursorLockMode.Locked;
     }
 

@@ -36,10 +36,14 @@ public class PlayerController : MonoBehaviour
             TryPickup();
         }
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        else if (Input.GetKeyDown(KeyCode.Q))
         {
             DropItem();
         }
+        /*else if (Input.GetKeyDown(KeyCode.E)&&heldItem!=null)
+        {
+            heldItem.GetComponent<Item>().Use();
+        }*/
     }
 
     void FixedUpdate()

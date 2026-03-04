@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class Locator : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+public static Locator Instance { get; private set; }
+public NPC npc {get; private set;}
+public PlayerController player {get; private set;}
+private void Awake() 
+{
+    if (Instance != null && Instance != this) 
     {
-        
+        Destroy(this);
+        return;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    Instance = this;
+    GameObject NPC = GameObject.FindWithTag("npc");
+    npc = NPC.GetComponent<NPC>();
+    GameObject playerFinder = GameObject.FindWithTag("Player");
+    player = playerFinder.GetComponent<PlayerController>();
+}
 }
