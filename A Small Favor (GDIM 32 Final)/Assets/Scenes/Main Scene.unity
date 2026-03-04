@@ -3477,6 +3477,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HeyText
       objectReference: {fileID: 0}
+    - target: {fileID: 6388469520617444315, guid: 871663a6c5e084e7e9a189b64b126093, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6730250168109022408, guid: 871663a6c5e084e7e9a189b64b126093, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.4058295
