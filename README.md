@@ -30,3 +30,4 @@ Cite any open-source assets here. Put them in a LIST, and use correctly formatte
 - [Rocks and Bushes](https://assetstore.unity.com/packages/3d/environments/landscapes/low-poly-nature-pack-lite-40444)
 - [Sun Model](https://assetstore.unity.com/packages/3d/environments/sci-fi/cosmokit-stylized-low-poly-planets-142199)
 - [Really Cool Furtnite Pack!](https://assetstore.unity.com/packages/3d/props/interior/ultimate-interior-furniture-pack-low-poly-household-kitchen-prop-316897)
+- [Neighbor NPC Model](https://assetstore.unity.com/packages/3d/characters/humanoids/minimal-poly-free-308063)
