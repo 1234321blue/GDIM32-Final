@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 public enum Mood {happy, fine, mad}
 public class NPC : MonoBehaviour
@@ -11,18 +12,25 @@ public class NPC : MonoBehaviour
     [SerializeField] private DialogueUI dialogueUI;
     //[SerializeField] private PlayerController player;
     public GameObject interactableText;
+    //[SerializeField] private TextMeshProUGUI tutorialText;
+    //[SerializeField] private GameObject keybindText1;
+    //[SerializeField] private GameObject keybindText2;
     private Mood npcMood;
-    //public int interactionChain = 0;
-    private Dialogue currentNode;
+    private int interactionChain = 0;
+    public Dialogue currentNode;
     private int currentLine = 0;
     private bool runningDialogue;
     private bool waitingForPlayerResponse;
+
     private Animator animator;
+    private bool hasTalked=false;
+
 
     void Start()
     {
         currentNode = startingDialogue;
         animator = GetComponentInChildren<Animator>();
+        //tutorialText.text = "Talk to NPC";
     }
 
     void Update()
@@ -41,11 +49,22 @@ public class NPC : MonoBehaviour
                 if(!waitingForPlayerResponse && Input.GetKeyDown(KeyCode.Space))
                 {
                     interactableText.SetActive(false);
+                    /*tutorialText.enabled=false;
+                    keybindText1.SetActive(false);
+                    keybindText2.SetActive(false);*/
                     AdvanceDialogue();
+                    hasTalked=true;
                 }
                 else if(!runningDialogue)
                 {
-                    interactableText.SetActive(true);    
+                    interactableText.SetActive(true);
+                    //tutorialText.enabled=true;
+                    if(hasTalked)
+                    {
+                        /*keybindText1.SetActive(true);
+                        keybindText2.SetActive(true); 
+                        tutorialText.text = "Find Items to give to NPC"; */
+                    }
                 }
             //}
 
@@ -56,8 +75,17 @@ public class NPC : MonoBehaviour
         }
         else
         {
-            EndDialogue();
+            if(hasTalked)
+            {
+                EndDialogue();
+            }
             interactableText.SetActive(false);
+            /*tutorialText.enabled=true;
+            if(interactionChain>0)
+            {
+                keybindText1.SetActive(true);
+                keybindText2.SetActive(true);   
+            }*/
         }
     }
         public void AdvanceDialogue ()
@@ -105,6 +133,7 @@ public class NPC : MonoBehaviour
         Locator.Instance.player.enabled=true;
         Cursor.lockState = CursorLockMode.Locked;
         animator.SetBool("isTalking", false);
+        interactionChain++;
     }
 
     public void SelectedOption(int option)
