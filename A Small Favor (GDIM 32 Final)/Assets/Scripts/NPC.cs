@@ -17,10 +17,12 @@ public class NPC : MonoBehaviour
     private int currentLine = 0;
     private bool runningDialogue;
     private bool waitingForPlayerResponse;
+    private Animator animator;
 
     void Start()
     {
         currentNode = startingDialogue;
+        animator = GetComponentInChildren<Animator>();
     }
 
     void Update()
@@ -65,6 +67,7 @@ public class NPC : MonoBehaviour
         if (playerThere)
         {
         runningDialogue = true;
+        animator.SetBool("isTalking", true);
         if(runningDialogue)
         {
             Locator.Instance.player.enabled=false;
@@ -101,6 +104,7 @@ public class NPC : MonoBehaviour
         dialogueUI.HideDialogue();
         Locator.Instance.player.enabled=true;
         Cursor.lockState = CursorLockMode.Locked;
+        animator.SetBool("isTalking", false);
     }
 
     public void SelectedOption(int option)
