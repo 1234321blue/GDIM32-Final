@@ -7,7 +7,6 @@ public class Item : MonoBehaviour
 {
     public bool held;
     [SerializeField] protected Dialogue uniqueDialogue;
-    protected NPC npc;
     public virtual void Use()
     {
         Debug.Log("Errr");

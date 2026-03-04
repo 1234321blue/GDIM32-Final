@@ -4,7 +4,7 @@ using UnityEngine;
 public enum Mood {happy, fine, mad}
 public class NPC : MonoBehaviour
 {
-    [SerializeField] private Transform npcTransform;
+    //[SerializeField] private Transform npcTransform;
     [SerializeField] private float checkRad = 1f;
     [SerializeField] private float checkDistance = 1f;
     public Dialogue startingDialogue;
@@ -31,7 +31,7 @@ public class NPC : MonoBehaviour
     private void CheckForPlayer()
     {
         RaycastHit hit;
-        bool playerThere = Physics.SphereCast(npcTransform.position, checkRad,npcTransform.forward, out hit, checkDistance);
+        bool playerThere = Physics.SphereCast(transform.position, checkRad,transform.forward, out hit, checkDistance);
         if (playerThere)
         {
             //if (interactionChain==0)
@@ -109,6 +109,6 @@ public class NPC : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color=Color.red;
-        Gizmos.DrawWireSphere(npcTransform.position + npcTransform.forward * checkDistance, checkRad);
+        Gizmos.DrawWireSphere(transform.position + transform.forward * checkDistance, checkRad);
     }
 }

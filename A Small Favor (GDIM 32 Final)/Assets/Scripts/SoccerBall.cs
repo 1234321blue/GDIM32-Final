@@ -8,8 +8,7 @@ public class SoccerBall : Item
     {
         if(held==true)
         {
-            npc.startingDialogue=uniqueDialogue;
-            //npc.AdvanceDialogue();
+            Locator.Instance.npc.startingDialogue=uniqueDialogue;
         }
     }
 }
