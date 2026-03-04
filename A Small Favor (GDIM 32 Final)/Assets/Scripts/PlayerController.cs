@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public Transform holdPoint;
     public TextMeshProUGUI interactText;
     public TextMeshProUGUI npcInteractText;
+    public TextMeshProUGUI dropText;
 
     private GameObject heldItem;
 
@@ -44,6 +45,15 @@ public class PlayerController : MonoBehaviour
         {
             heldItem.GetComponent<Item>().Use();
         }*/
+
+        if (heldItem != null)
+        {
+            dropText.gameObject.SetActive(true);
+        }
+        else
+        {
+            dropText.gameObject.SetActive(false);
+        }
     }
 
     void FixedUpdate()

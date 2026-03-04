@@ -13,13 +13,14 @@ MonoBehaviour:
   m_Name: StartingDialogue
   m_EditorClassIdentifier: 
   npcDialogue:
-  - hey there neighbor!
-  - my name is DNie(e4a
-  - whats yours?
+  - Hey there neighbor!
+  - I noticed you just moved in!
+  - My name is George
+  - What's yours?
   playerResponses:
-  - my name's Sally!
-  - my name's Jack!
-  - screw off would ya bloke
+  - My name's Sally!
+  - My name's Jack!
+  - Screw off would ya bloke
   npcReplies:
   - {fileID: 11400000, guid: ef6c2b7e6c6c44263aad9d2865bf175f, type: 2}
   - {fileID: 11400000, guid: 5eb392250fb1f4dfa9aa14a5f32431e2, type: 2}

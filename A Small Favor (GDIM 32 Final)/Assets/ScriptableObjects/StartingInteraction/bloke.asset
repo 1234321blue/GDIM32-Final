@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: bloke
   m_EditorClassIdentifier: 
   npcDialogue:
-  - oh thats not nice
-  - listen i just need something
-  - i just really need some milk
-  - would u get that for me
+  - Oh, that's not nice
+  - Listen, I just need something
+  - I just REALLY need some milk
+  - Could you get some for me?
   playerResponses: []
   npcReplies: []

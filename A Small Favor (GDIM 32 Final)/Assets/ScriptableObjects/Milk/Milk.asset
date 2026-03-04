@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcDialogue:
   - Thank you so much!
-  - my son timmy really needed this
-  - he would have died soon from frail little bones and body the poor guy
+  - My son Timmy really needed this!
+  - He would have died soon from his frail little bones and body, the poor guy...
   playerResponses:
   - just glad i can help
   - yeah yeah yeah can u go now?

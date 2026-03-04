@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Sally
   m_EditorClassIdentifier: 
   npcDialogue:
-  - heya sally
+  - Heya Sally
   playerResponses: []
   npcReplies: []
