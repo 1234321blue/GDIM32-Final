@@ -13,6 +13,13 @@ MonoBehaviour:
   m_Name: Jackson
   m_EditorClassIdentifier: 
   npcDialogue:
-  - Heya Jackson
+  - Jackson eh? Nice to meet you
+  - Listen Jackson, i need some milk
+  - my son timmy has been looking frail as rocks
+  - could ya do me this small favor?
+  - (omg name drop holy moly omg)
+  - (u picked the choice in which the name drop happened)
+  - (lets gooooooo)
+  - (now go get some milk or something)
   playerResponses: []
   npcReplies: []

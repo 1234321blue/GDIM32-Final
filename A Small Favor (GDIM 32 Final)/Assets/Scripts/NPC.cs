@@ -12,9 +12,9 @@ public class NPC : MonoBehaviour
     [SerializeField] private DialogueUI dialogueUI;
     //[SerializeField] private PlayerController player;
     public GameObject interactableText;
-    //[SerializeField] private TextMeshProUGUI tutorialText;
-    //[SerializeField] private GameObject keybindText1;
-    //[SerializeField] private GameObject keybindText2;
+    [SerializeField] private TextMeshProUGUI tutorialText;
+    [SerializeField] private GameObject keybindText1;
+    [SerializeField] private GameObject keybindText2;
     private Mood npcMood;
     private int interactionChain = 0;
     public Dialogue currentNode;
@@ -30,7 +30,7 @@ public class NPC : MonoBehaviour
     {
         currentNode = startingDialogue;
         animator = GetComponentInChildren<Animator>();
-        //tutorialText.text = "Talk to NPC";
+        tutorialText.text = "Talk to NPC";
     }
 
     void Update()
@@ -44,29 +44,29 @@ public class NPC : MonoBehaviour
         bool playerThere = Physics.SphereCast(transform.position, checkRad,transform.forward, out hit, checkDistance);
         if (playerThere)
         {
-            //if (interactionChain==0)
-            //{
+            /*if (interactionChain==0)
+            {*/
                 if(!waitingForPlayerResponse && Input.GetKeyDown(KeyCode.Space))
                 {
                     interactableText.SetActive(false);
-                    /*tutorialText.enabled=false;
+                    tutorialText.enabled=false;
                     keybindText1.SetActive(false);
-                    keybindText2.SetActive(false);*/
+                    keybindText2.SetActive(false);
                     AdvanceDialogue();
                     hasTalked=true;
                 }
                 else if(!runningDialogue)
                 {
                     interactableText.SetActive(true);
-                    //tutorialText.enabled=true;
+                    tutorialText.enabled=true;
                     if(hasTalked)
                     {
-                        /*keybindText1.SetActive(true);
+                        keybindText1.SetActive(true);
                         keybindText2.SetActive(true); 
-                        tutorialText.text = "Find Items to give to NPC"; */
+                        tutorialText.text = "Find Items to give to NPC"; 
                     }
-                }
-            //}
+                //}
+            }
 
             /*else if (interactionChain==1)
             {
@@ -80,12 +80,12 @@ public class NPC : MonoBehaviour
                 EndDialogue();
             }
             interactableText.SetActive(false);
-            /*tutorialText.enabled=true;
+            tutorialText.enabled=true;
             if(interactionChain>0)
             {
                 keybindText1.SetActive(true);
                 keybindText2.SetActive(true);   
-            }*/
+            }
         }
     }
         public void AdvanceDialogue ()
