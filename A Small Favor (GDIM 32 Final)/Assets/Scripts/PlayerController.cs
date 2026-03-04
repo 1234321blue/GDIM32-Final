@@ -143,14 +143,14 @@ public class PlayerController : MonoBehaviour
                 interactText.gameObject.SetActive(true);
                 return;
             }
-            if (hit.collider.CompareTag("npc"))
+            /*if (hit.collider.CompareTag("npc"))
             {
                 npcInteractText.gameObject.SetActive(true);
                 return;
-            }
+            }*/
         }
 
         interactText.gameObject.SetActive(false);
-        npcInteractText.gameObject.SetActive(false);
+        //npcInteractText.gameObject.SetActive(false);
     }
 }
