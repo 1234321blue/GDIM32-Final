@@ -7,8 +7,14 @@ public class Item : MonoBehaviour
 {
     public bool held;
     [SerializeField] protected Dialogue uniqueDialogue;
-    public virtual void Use()
+    private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Errr");
+        if(collision.gameObject.CompareTag("npc"))
+        {
+        Locator.Instance.npc.interactableText.SetActive(false);
+        Locator.Instance.npc.startingDialogue = uniqueDialogue;
+        //Locator.Instance.npc.AdvanceDialogue();
+        Destroy(gameObject);
+        }
     }
 }

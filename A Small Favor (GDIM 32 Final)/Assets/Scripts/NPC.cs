@@ -10,7 +10,7 @@ public class NPC : MonoBehaviour
     public Dialogue startingDialogue;
     [SerializeField] private DialogueUI dialogueUI;
     //[SerializeField] private PlayerController player;
-    [SerializeField] private GameObject interactableText;
+    public GameObject interactableText;
     private Mood npcMood;
     //public int interactionChain = 0;
     private Dialogue currentNode;
@@ -60,6 +60,10 @@ public class NPC : MonoBehaviour
     }
         public void AdvanceDialogue ()
     {
+        RaycastHit hit;
+        bool playerThere = Physics.SphereCast(transform.position, checkRad,transform.forward, out hit, checkDistance);
+        if (playerThere)
+        {
         runningDialogue = true;
         if(runningDialogue)
         {
@@ -84,6 +88,7 @@ public class NPC : MonoBehaviour
         {
             // if there are no NPC or player lines left, close dialogue UI
             EndDialogue();
+        }
         }
     }
 

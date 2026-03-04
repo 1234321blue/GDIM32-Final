@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 5135187492537205080}
   m_Layer: 0
   m_Name: NeighborNPC
-  m_TagString: Untagged
+  m_TagString: npc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,14 +173,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d0fa757030bf4cb6a82d926656977c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcTransform: {fileID: 6730250168109022408}
   checkRad: 1
   checkDistance: 2
   startingDialogue: {fileID: 11400000, guid: 503d8b3a12c1f49abb7b61bd31e68e01, type: 2}
   dialogueUI: {fileID: 0}
-  player: {fileID: 0}
   interactableText: {fileID: 6145097858188814589}
-  interactionChain: 0
 --- !u!23 &6388469520617444315
 MeshRenderer:
   m_ObjectHideFlags: 0

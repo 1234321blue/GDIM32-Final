@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fb2552b0b02c4206bd25983fb7e2987, type: 3}
+  m_Name: Milk
+  m_EditorClassIdentifier: 
+  npcDialogue:
+  - Thank you so much!
+  - my son timmy really needed this
+  - he would have died soon from frail little bones and body the poor guy
+  playerResponses:
+  - just glad i can help
+  - yeah yeah yeah can u go now?
+  - r u single?
+  npcReplies:
+  - {fileID: 11400000, guid: 04060508a765b4cbbad78aa411202cf5, type: 2}
+  - {fileID: 11400000, guid: 2dba41c8930c249fe9a8a4e838172b58, type: 2}
+  - {fileID: 11400000, guid: 7733313d22e9b4058be5c6b3dd6b2ff3, type: 2}
