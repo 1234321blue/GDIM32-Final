@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public float mouseSensitivity = 1000f;
+    public float mouseSensitivity = 800f;
     public float interactRange = 3f;
     public Transform holdPoint;
     public TextMeshProUGUI interactText;
@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb;
     private float xRotation = 0f;
+    
 
     void Start()
     {
@@ -59,6 +60,7 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         HandleMovement();
+        HandleMouseLook();
     }
 
     void HandleMouseLook()

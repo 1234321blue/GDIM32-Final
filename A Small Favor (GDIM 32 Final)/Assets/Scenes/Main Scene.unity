@@ -17046,7 +17046,7 @@ PrefabInstance:
       objectReference: {fileID: 147965552}
     - target: {fileID: 5759719821048404134, guid: ea09380a209db4f44a868824350d2ddd, type: 3}
       propertyPath: mouseSensitivity
-      value: 200
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
