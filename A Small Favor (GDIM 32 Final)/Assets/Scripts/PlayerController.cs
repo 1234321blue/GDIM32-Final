@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public float mouseSensitivity = 200f;
     public float interactRange = 3f;
     public Transform holdPoint;
+    public Transform largeHoldPoint;
     public TextMeshProUGUI interactText;
     public TextMeshProUGUI npcInteractText;
     public TextMeshProUGUI dropText;
@@ -104,29 +105,38 @@ public class PlayerController : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, interactRange))
         {
-            if (hit.collider.CompareTag("item"))
+            if (hit.collider.CompareTag("item") || hit.collider.CompareTag("largeitem"))
             {
                 heldItem = hit.collider.gameObject;
 
                 Item item = heldItem.GetComponent<Item>();
-                item.held=true;
+                item.held = true;
 
-            Rigidbody itemRb = heldItem.GetComponent<Rigidbody>();
-            if (itemRb != null)
-            {
-                itemRb.isKinematic = true;
-            }
+                Rigidbody itemRb = heldItem.GetComponent<Rigidbody>();
+                if (itemRb != null)
+                {
+                    itemRb.isKinematic = true;
+                }
 
-            heldItem.transform.SetParent(holdPoint);
-            heldItem.transform.localPosition = Vector3.zero;
-            heldItem.transform.localRotation = Quaternion.identity;
+            // choose correct hold point
+                if (heldItem.CompareTag("largeitem"))
+                {
+                    heldItem.transform.SetParent(largeHoldPoint);
+                }
+                else
+                {
+                    heldItem.transform.SetParent(holdPoint);
+                }
 
-            Collider col = heldItem.GetComponent<Collider>();
-            if (col != null)
+                heldItem.transform.localPosition = Vector3.zero;
+                heldItem.transform.localRotation = Quaternion.identity;
+
+                Collider col = heldItem.GetComponent<Collider>();
+                if (col != null)
                 col.enabled = false;
             }
         }
-    }   
+    }
 
     void DropItem()
     {
