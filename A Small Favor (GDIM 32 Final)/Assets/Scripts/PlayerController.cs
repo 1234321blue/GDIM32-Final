@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public float mouseSensitivity = 800f;
+    public float mouseSensitivity = 200f;
     public float interactRange = 3f;
     public Transform holdPoint;
     public TextMeshProUGUI interactText;
@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb;
     private float xRotation = 0f;
+    private float smoothMouseX;
+    private float smoothMouseY;
     
 
     void Start()
@@ -60,16 +62,18 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         HandleMovement();
-        HandleMouseLook();
     }
 
     void HandleMouseLook()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
+        smoothMouseX = Mathf.Lerp(smoothMouseX, Input.GetAxis("Mouse X"), 10f * Time.deltaTime);
+        smoothMouseY = Mathf.Lerp(smoothMouseY, Input.GetAxis("Mouse Y"), 10f * Time.deltaTime);
+
+        float mouseX = smoothMouseX * mouseSensitivity * Time.deltaTime;
+        float mouseY = smoothMouseY * mouseSensitivity * Time.deltaTime;
 
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+        xRotation = Mathf.Clamp(xRotation, -15f, 90f);
 
         playerCamera.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
