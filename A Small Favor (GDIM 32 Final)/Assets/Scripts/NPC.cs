@@ -9,6 +9,7 @@ public class NPC : MonoBehaviour
     [SerializeField] private float checkRad = 1f;
     [SerializeField] private float checkDistance = 1f;
     public Dialogue startingDialogue;
+    [SerializeField] private Dialogue waitingDialogue;
     [SerializeField] private DialogueUI dialogueUI;
     //[SerializeField] private PlayerController player;
     public GameObject interactableText;
@@ -24,6 +25,7 @@ public class NPC : MonoBehaviour
 
     private Animator animator;
     private bool hasTalked=false;
+    public bool hasItem=false;
 
 
     void Start()
@@ -36,6 +38,10 @@ public class NPC : MonoBehaviour
     void Update()
     {
         CheckForPlayer();
+        if(hasItem==false&&hasTalked==true)
+        {
+            startingDialogue = waitingDialogue;
+        }
     }
 
     private void CheckForPlayer()
@@ -75,10 +81,6 @@ public class NPC : MonoBehaviour
         }
         else
         {
-            if(hasTalked)
-            {
-                EndDialogue();
-            }
             interactableText.SetActive(false);
             tutorialText.enabled=true;
             if(interactionChain>0)
@@ -90,10 +92,6 @@ public class NPC : MonoBehaviour
     }
         public void AdvanceDialogue ()
     {
-        RaycastHit hit;
-        bool playerThere = Physics.SphereCast(transform.position, checkRad,transform.forward, out hit, checkDistance);
-        if (playerThere)
-        {
         runningDialogue = true;
         animator.SetBool("isTalking", true);
         if(runningDialogue)
@@ -120,11 +118,14 @@ public class NPC : MonoBehaviour
             // if there are no NPC or player lines left, close dialogue UI
             EndDialogue();
         }
-        }
     }
 
     private void EndDialogue ()
     {
+        if(runningDialogue==true)
+        {
+            hasItem = false;
+        }
         runningDialogue = false;
         waitingForPlayerResponse = false;
         currentNode = startingDialogue;
