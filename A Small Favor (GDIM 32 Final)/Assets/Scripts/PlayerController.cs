@@ -168,7 +168,7 @@ public class PlayerController : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, interactRange))
         {
-            if (hit.collider.CompareTag("item") && heldItem == null)
+            if (hit.collider.CompareTag("item") || hit.collider.CompareTag("largeitem") && heldItem == null)
             {
                 interactText.gameObject.SetActive(true);
                 return;
