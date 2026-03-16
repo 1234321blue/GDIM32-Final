@@ -16,7 +16,7 @@ Put your group Devlog here.
 
 
 ### Gael Porras Devlog
-Put your individual final Devlog here.
+Since the Check-In, I mainly contributed to improving the player interaction systems and NPC presentation. I modified the PlayerController script, including the TryPickup() and DropItem() methods, to refine how the player picks up and drops interactable objects using raycasting and by attaching objects to a holdPoint transform. I also added support for different item sizes by introducing another hold point and using object tags to determine how items are held. In addition to gameplay code changes, I implemented an AudioSource and added a music track that plays during a specific moment in the NPC’s dialogue sequence. I also integrated character animations in Unity, including an idle animation and a talking animation, and connected them through the NPC’s Animator so the talking animation plays while dialogue is active. Finally, I fixed an issue with the player camera by adjusting the camera and mouse look behavior in the PlayerController, which resolved problems with sensitivity and snapping when looking left and right. These contributions helped improve the player interaction mechanics and made the NPC interactions feel more polished.
 ### Jeremiah Yang Devlog
 Put your individual final Devlog here.
 
