@@ -52,8 +52,8 @@ public class NPC : MonoBehaviour
         bool playerThere = Physics.SphereCast(transform.position, checkRad,transform.forward, out hit, checkDistance);
         if (playerThere)
         {
-            /*if (interactionChain==0)
-            {*/
+            if (hit.collider.CompareTag("Player"))
+            {
                 if(!waitingForPlayerResponse && Input.GetKeyDown(KeyCode.Space))
                 {
                     interactableText.SetActive(false);
@@ -73,13 +73,8 @@ public class NPC : MonoBehaviour
                         keybindText2.SetActive(true); 
                         tutorialText.text = "Find Items to give to NPC"; 
                     }
-                //}
+                }
             }
-
-            /*else if (interactionChain==1)
-            {
-                
-            }*/
         }
         else
         {
