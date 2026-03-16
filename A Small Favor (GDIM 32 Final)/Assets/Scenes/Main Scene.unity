@@ -3575,6 +3575,10 @@ PrefabInstance:
       propertyPath: tutorialText
       value: 
       objectReference: {fileID: 11688266}
+    - target: {fileID: 3965319527661459021, guid: 871663a6c5e084e7e9a189b64b126093, type: 3}
+      propertyPath: waitingDialogue
+      value: 
+      objectReference: {fileID: 11400000, guid: 19c09290b0a854702a1c61ca843fbbb4, type: 2}
     - target: {fileID: 4024495064269691481, guid: 871663a6c5e084e7e9a189b64b126093, type: 3}
       propertyPath: m_SizeDelta.y
       value: 39.25
