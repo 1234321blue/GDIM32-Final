@@ -22,7 +22,6 @@ Put your individual final Devlog here.
 
 
 ## Open-Source Assets
-Open Source Assets:
 - [Old-Cartoon Background Music](https://assetstore.unity.com/packages/audio/music/orchestral/old-cartoon-music-pack-free-277325)
 - [Grass Material](https://assetstore.unity.com/packages/2d/textures-materials/glass/stylized-grass-texture-153153)
 - [Trees](https://assetstore.unity.com/search#q=trees&nf-ec_price_filter=0...0)
