@@ -3584,6 +3584,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11688266}
     - target: {fileID: 3965319527661459021, guid: 871663a6c5e084e7e9a189b64b126093, type: 3}
+      propertyPath: tutorialText2
+      value: 
+      objectReference: {fileID: 589002800}
+    - target: {fileID: 3965319527661459021, guid: 871663a6c5e084e7e9a189b64b126093, type: 3}
       propertyPath: waitingDialogue
       value: 
       objectReference: {fileID: 11400000, guid: 19c09290b0a854702a1c61ca843fbbb4, type: 2}
@@ -5857,7 +5861,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &589002799
 RectTransform:
   m_ObjectHideFlags: 0

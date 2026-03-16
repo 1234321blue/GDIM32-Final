@@ -15,7 +15,7 @@ MonoBehaviour:
   npcDialogue:
   - Hey there neighbor!
   - I noticed you just moved in!
-  - My name is George
+  - My name is Georgina
   - What's yours?
   playerResponses:
   - My name's Sally!
