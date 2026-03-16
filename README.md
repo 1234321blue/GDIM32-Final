@@ -15,15 +15,14 @@ At this point in the project, I have worked on branching dialogue, item interact
 Put your group Devlog here.
 
 
-### Team Member Name 1
+### Gael Porras Devlog
 Put your individual final Devlog here.
-### Team Member Name 2
+### Jeremiah Yang Devlog
 Put your individual final Devlog here.
 
 
 ## Open-Source Assets
-Cite any open-source assets here. Put them in a LIST, and use correctly formatted LINKS.
-
+Open Source Assets:
 - [Old-Cartoon Background Music](https://assetstore.unity.com/packages/audio/music/orchestral/old-cartoon-music-pack-free-277325)
 - [Grass Material](https://assetstore.unity.com/packages/2d/textures-materials/glass/stylized-grass-texture-153153)
 - [Trees](https://assetstore.unity.com/search#q=trees&nf-ec_price_filter=0...0)
