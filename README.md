@@ -31,3 +31,4 @@ Cite any open-source assets here. Put them in a LIST, and use correctly formatte
 - [Sun Model](https://assetstore.unity.com/packages/3d/environments/sci-fi/cosmokit-stylized-low-poly-planets-142199)
 - [Really Cool Furtnite Pack!](https://assetstore.unity.com/packages/3d/props/interior/ultimate-interior-furniture-pack-low-poly-household-kitchen-prop-316897)
 - [Neighbor NPC Model](https://assetstore.unity.com/packages/3d/characters/humanoids/humans/chuby-character-lowpoly-free-293989)
+- [Careless Whisper Audio Track](https://archive.org/details/carelesswhisper_201911#reviews)
