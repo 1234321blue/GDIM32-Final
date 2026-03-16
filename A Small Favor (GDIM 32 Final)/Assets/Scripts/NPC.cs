@@ -14,6 +14,7 @@ public class NPC : MonoBehaviour
     //[SerializeField] private PlayerController player;
     public GameObject interactableText;
     [SerializeField] private TextMeshProUGUI tutorialText;
+    [SerializeField] private TextMeshProUGUI tutorialText2;
     [SerializeField] private GameObject keybindText1;
     [SerializeField] private GameObject keybindText2;
     [SerializeField] private AudioSource musicSource;
@@ -67,11 +68,12 @@ public class NPC : MonoBehaviour
                 {
                     interactableText.SetActive(true);
                     tutorialText.enabled=true;
+                    tutorialText2.enabled=true;
                     if(hasTalked)
                     {
                         keybindText1.SetActive(true);
                         keybindText2.SetActive(true); 
-                        tutorialText.text = "Find Items to give to NPC"; 
+                        tutorialText.text = "Give Milk to NPC"; 
                     }
                 }
             }
@@ -80,6 +82,7 @@ public class NPC : MonoBehaviour
         {
             interactableText.SetActive(false);
             tutorialText.enabled=true;
+            tutorialText2.enabled=true;
             if(interactionChain>0)
             {
                 keybindText1.SetActive(true);
