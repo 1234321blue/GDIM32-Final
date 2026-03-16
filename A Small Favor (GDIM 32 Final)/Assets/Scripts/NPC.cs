@@ -39,11 +39,11 @@ public class NPC : MonoBehaviour
 
     void Update()
     {
-        CheckForPlayer();
         if(hasItem==false&&hasTalked==true)
         {
             startingDialogue = waitingDialogue;
         }
+        CheckForPlayer();
     }
 
     private void CheckForPlayer()
@@ -94,6 +94,7 @@ public class NPC : MonoBehaviour
     }
         public void AdvanceDialogue ()
     {
+        hasItem = false;
         runningDialogue = true;
         animator.SetBool("isTalking", true);
         if(runningDialogue)
@@ -135,10 +136,6 @@ public class NPC : MonoBehaviour
 
     private void EndDialogue ()
     {
-        if(runningDialogue==true)
-        {
-            hasItem = false;
-        }
         runningDialogue = false;
         waitingForPlayerResponse = false;
         currentNode = startingDialogue;
