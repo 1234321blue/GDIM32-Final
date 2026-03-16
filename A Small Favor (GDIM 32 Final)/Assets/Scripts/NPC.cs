@@ -16,6 +16,8 @@ public class NPC : MonoBehaviour
     [SerializeField] private TextMeshProUGUI tutorialText;
     [SerializeField] private GameObject keybindText1;
     [SerializeField] private GameObject keybindText2;
+    [SerializeField] private AudioSource musicSource;
+    [SerializeField] private AudioClip cueSong;
     private Mood npcMood;
     private int interactionChain = 0;
     public Dialogue currentNode;
@@ -104,7 +106,18 @@ public class NPC : MonoBehaviour
         if(currentLine < currentNode.npcDialogue.Length)
         {
             // if we still have NPC lines left, keep playing NPC lines
-            dialogueUI.ShowDialogue(currentNode.npcDialogue[currentLine]);
+            /*dialogueUI.ShowDialogue(currentNode.npcDialogue[currentLine]);
+            currentLine++;*/
+
+            string line = currentNode.npcDialogue[currentLine];
+
+            if(line == "(cue cheesy trumpet music or that one funny sax song)")
+            {
+                musicSource.clip = cueSong;
+                musicSource.Play();
+            }
+
+            dialogueUI.ShowDialogue(line);
             currentLine++;
         }
         else if(currentNode.playerResponses != null && currentNode.playerResponses.Length > 0)
@@ -135,6 +148,7 @@ public class NPC : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         animator.SetBool("isTalking", false);
         interactionChain++;
+        musicSource.Stop();
     }
 
     public void SelectedOption(int option)
