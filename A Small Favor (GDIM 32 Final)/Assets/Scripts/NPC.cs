@@ -4,7 +4,7 @@ using System.Globalization;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
-public enum Mood {happy, fine, mad, pillow}
+public enum Mood {happy, mad, pillow}
 public class NPC : MonoBehaviour
 {
     //[SerializeField] private Transform npcTransform;
@@ -182,13 +182,9 @@ public class NPC : MonoBehaviour
     {
         if(!hasMilk)
         {
-        if(moodIndicator==1)
+        if(moodIndicator==1||moodIndicator==2)
         {
             npcMood=Mood.happy;
-        }
-        if(moodIndicator==2)
-        {
-            npcMood=Mood.fine;
         }
         if(moodIndicator>=3)
         {
