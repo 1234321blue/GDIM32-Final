@@ -22,6 +22,10 @@ public class PlayerController : MonoBehaviour
     private float xRotation = 0f;
     private float smoothMouseX;
     private float smoothMouseY;
+
+    private float mouseXVelocity;
+    private float mouseYVelocity;
+    public float smoothTime = 0.03f;
     
 
     void Start()
@@ -32,8 +36,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        HandleMouseLook();
-
         CheckForInteractable();
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -45,10 +47,6 @@ public class PlayerController : MonoBehaviour
         {
             DropItem();
         }
-        /*else if (Input.GetKeyDown(KeyCode.E)&&heldItem!=null)
-        {
-            heldItem.GetComponent<Item>().Use();
-        }*/
 
         if (heldItem != null)
         {
@@ -60,6 +58,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    void LateUpdate()
+    {
+        HandleMouseLook();
+    }
+
     void FixedUpdate()
     {
         HandleMovement();
@@ -67,18 +70,17 @@ public class PlayerController : MonoBehaviour
 
     void HandleMouseLook()
     {
-        smoothMouseX = Mathf.Lerp(smoothMouseX, Input.GetAxis("Mouse X"), 10f * Time.deltaTime);
-        smoothMouseY = Mathf.Lerp(smoothMouseY, Input.GetAxis("Mouse Y"), 10f * Time.deltaTime);
+        float targetMouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+        float targetMouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
 
-        float mouseX = smoothMouseX * mouseSensitivity * Time.deltaTime;
-        float mouseY = smoothMouseY * mouseSensitivity * Time.deltaTime;
+        smoothMouseX = Mathf.SmoothDamp(smoothMouseX, targetMouseX, ref mouseXVelocity, smoothTime);
+        smoothMouseY = Mathf.SmoothDamp(smoothMouseY, targetMouseY, ref mouseYVelocity, smoothTime);
 
-        xRotation -= mouseY;
+        xRotation -= smoothMouseY;
         xRotation = Mathf.Clamp(xRotation, -15f, 90f);
 
         playerCamera.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
-
-        transform.Rotate(Vector3.up * mouseX);
+        transform.Rotate(Vector3.up * smoothMouseX);
     }
 
     void HandleMovement()
