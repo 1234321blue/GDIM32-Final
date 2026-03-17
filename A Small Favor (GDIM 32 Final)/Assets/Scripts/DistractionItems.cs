@@ -2,17 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DistractionItems : MonoBehaviour
+public class DistractionItems : Item
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private Dialogue madDialogue;
+    protected override void OnCollisionEnter(Collision collision)
     {
-        
-    }
+        if(collision.gameObject.CompareTag("npc"))
+        {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Locator.Instance.npc.moodIndicator++;
+
+        if(Locator.Instance.npc.npcMood==Mood.mad)
+        {
+            uniqueDialogue = madDialogue;
+        }
+
+        }
+        base.OnCollisionEnter(collision);
     }
 }

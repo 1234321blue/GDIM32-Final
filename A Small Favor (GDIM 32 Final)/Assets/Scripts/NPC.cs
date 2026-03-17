@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 public enum Mood {happy, fine, mad}
 public class NPC : MonoBehaviour
@@ -22,7 +23,7 @@ public class NPC : MonoBehaviour
     [SerializeField] private GameObject loseScreen;
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioClip cueSong;
-    private Mood npcMood = Mood.happy;
+    public Mood npcMood{get; private set;} = Mood.happy; 
     public int moodIndicator = 0;
     private int interactionChain = 0;
     public Dialogue currentNode;

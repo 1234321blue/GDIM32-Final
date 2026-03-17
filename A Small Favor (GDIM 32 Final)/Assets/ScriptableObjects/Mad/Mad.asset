@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fb2552b0b02c4206bd25983fb7e2987, type: 3}
+  m_Name: Mad
+  m_EditorClassIdentifier: 
+  npcDialogue:
+  - THATS IT
+  - I ASK FOR ONE SIMPLE THING AND WHAT DO YOU DO
+  - YOU THROW ALL THIS POINTLESS STUFF AT ME
+  - IM DONE
+  - the milk was for my son TImmy btw
+  - he's just a frail little boy
+  - he really needed this milk
+  - BUT ID RATHER DIE AND TAKE TIMMY DOWN WITH ME BEFORE STANDING EVEN A SECOND LONGER
+    HERE
+  playerResponses:
+  - i just wanted to show u my cool stuff :(
+  - uhhhhhh
+  - but why so mad :3
+  npcReplies:
+  - {fileID: 11400000, guid: 53bf6a07bba994f67b332e97e580b20b, type: 2}
+  - {fileID: 11400000, guid: 53bf6a07bba994f67b332e97e580b20b, type: 2}
+  - {fileID: 11400000, guid: 53bf6a07bba994f67b332e97e580b20b, type: 2}
