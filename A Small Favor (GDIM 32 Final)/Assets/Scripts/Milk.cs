@@ -6,10 +6,10 @@ public class Milk : Item
 {
     protected override void OnCollisionEnter(Collision collision)
     {
-        base.OnCollisionEnter(collision);
         if(collision.gameObject.CompareTag("npc"))
         {
-            
+            Locator.Instance.npc.hasMilk=true;
         }
+        base.OnCollisionEnter(collision);
     }
 }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
 using TMPro;
 using UnityEngine;
 public enum Mood {happy, fine, mad}
@@ -17,9 +18,12 @@ public class NPC : MonoBehaviour
     [SerializeField] private GameObject tutorialText2;
     //[SerializeField] private GameObject keybindText1;
     //[SerializeField] private GameObject keybindText2;
+    [SerializeField] private GameObject winScreen;
+    [SerializeField] private GameObject loseScreen;
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioClip cueSong;
-    private Mood npcMood;
+    private Mood npcMood = Mood.happy;
+    public int moodIndicator = 0;
     private int interactionChain = 0;
     public Dialogue currentNode;
     private int currentLine = 0;
@@ -41,6 +45,7 @@ public class NPC : MonoBehaviour
 
     void Update()
     {
+        MoodIndication();
         if(hasItem==false&&hasTalked==true)
         {
             startingDialogue = waitingDialogue;
@@ -146,6 +151,10 @@ public class NPC : MonoBehaviour
         animator.SetBool("isTalking", false);
         interactionChain++;
         musicSource.Stop();
+        if(hasMilk||npcMood==Mood.mad)
+        {
+            EndGame();
+        }
     }
 
     public void SelectedOption(int option)
@@ -160,5 +169,39 @@ public class NPC : MonoBehaviour
     {
         Gizmos.color=Color.red;
         Gizmos.DrawWireSphere(transform.position + transform.forward * checkDistance, checkRad);
+    }
+    private void MoodIndication()
+    {
+        if(!hasMilk)
+        {
+        if(moodIndicator==1)
+        {
+            npcMood=Mood.happy;
+        }
+        if(moodIndicator==2)
+        {
+            npcMood=Mood.fine;
+        }
+        if(moodIndicator>=3)
+        {
+            npcMood=Mood.mad;
+        }
+        }
+        else
+        {
+            npcMood=Mood.happy;
+        }
+    }
+    private void EndGame()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        if(npcMood==Mood.mad)
+        {
+            loseScreen.SetActive(true);
+        }
+        else
+        {
+            winScreen.SetActive(true);
+        }
     }
 }
