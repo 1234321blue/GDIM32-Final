@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fb2552b0b02c4206bd25983fb7e2987, type: 3}
+  m_Name: Beer 3
+  m_EditorClassIdentifier: 
+  npcDialogue:
+  - hey no worries hon
+  - i know the first day on the job can be tough
+  - everyone mixes up milk and beer on their first day
+  - really hard to tell the difference
+  - just get me that milk and it'll be water under the bridge
+  - might even tip ya
+  playerResponses: []
+  npcReplies: []

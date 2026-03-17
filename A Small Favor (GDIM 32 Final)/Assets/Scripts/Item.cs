@@ -11,7 +11,7 @@ public abstract class Item : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("npc"))
         {
-        Locator.Instance.npc.interactableText.SetActive(false);
+        //Locator.Instance.npc.interactableText.SetActive(false);
         Locator.Instance.npc.hasItem=true;
         Locator.Instance.npc.currentNode = uniqueDialogue;
         Locator.Instance.npc.startingDialogue = uniqueDialogue;
