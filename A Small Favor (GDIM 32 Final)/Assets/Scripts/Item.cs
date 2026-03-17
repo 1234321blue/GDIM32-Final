@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Item : MonoBehaviour
+public abstract class Item : MonoBehaviour
 {
     public bool held;
     [SerializeField] protected Dialogue uniqueDialogue;
-    private void OnCollisionEnter(Collision collision)
+    protected virtual void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.CompareTag("npc"))
         {

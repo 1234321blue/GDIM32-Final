@@ -14,9 +14,9 @@ public class NPC : MonoBehaviour
     //[SerializeField] private PlayerController player;
     public GameObject interactableText;
     [SerializeField] private TextMeshProUGUI tutorialText;
-    [SerializeField] private TextMeshProUGUI tutorialText2;
-    [SerializeField] private GameObject keybindText1;
-    [SerializeField] private GameObject keybindText2;
+    [SerializeField] private GameObject tutorialText2;
+    //[SerializeField] private GameObject keybindText1;
+    //[SerializeField] private GameObject keybindText2;
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioClip cueSong;
     private Mood npcMood;
@@ -29,13 +29,14 @@ public class NPC : MonoBehaviour
     private Animator animator;
     private bool hasTalked=false;
     public bool hasItem=false;
+    public bool hasMilk = false;
 
 
     void Start()
     {
         currentNode = startingDialogue;
         animator = GetComponentInChildren<Animator>();
-        tutorialText.text = "Talk to NPC";
+        tutorialText.text = "- Talk to NPC";
     }
 
     void Update()
@@ -59,8 +60,9 @@ public class NPC : MonoBehaviour
                 {
                     interactableText.SetActive(false);
                     tutorialText.enabled=false;
-                    keybindText1.SetActive(false);
-                    keybindText2.SetActive(false);
+                    tutorialText2.SetActive(false);
+                    //keybindText1.SetActive(false);
+                    //keybindText2.SetActive(false);
                     AdvanceDialogue();
                     hasTalked=true;
                 }
@@ -68,12 +70,12 @@ public class NPC : MonoBehaviour
                 {
                     interactableText.SetActive(true);
                     tutorialText.enabled=true;
-                    tutorialText2.enabled=true;
                     if(hasTalked)
                     {
-                        keybindText1.SetActive(true);
-                        keybindText2.SetActive(true); 
-                        tutorialText.text = "Give Milk to NPC"; 
+                        //keybindText1.SetActive(true);
+                        //keybindText2.SetActive(true); 
+                        tutorialText2.SetActive(true);
+                        tutorialText.text = "- Give Milk to NPC"; 
                     }
                 }
             }
@@ -82,11 +84,11 @@ public class NPC : MonoBehaviour
         {
             interactableText.SetActive(false);
             tutorialText.enabled=true;
-            tutorialText2.enabled=true;
             if(interactionChain>0)
             {
-                keybindText1.SetActive(true);
-                keybindText2.SetActive(true);   
+                //keybindText1.SetActive(true);
+                //keybindText2.SetActive(true);  
+                tutorialText2.SetActive(true); 
             }
         }
     }
