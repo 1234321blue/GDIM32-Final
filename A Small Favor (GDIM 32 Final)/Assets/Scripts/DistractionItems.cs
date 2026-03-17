@@ -13,6 +13,7 @@ public class DistractionItems : Item
         Locator.Instance.npc.moodIndicator++;
 
         }
+        Locator.Instance.npc.MoodIndication();
         if(Locator.Instance.npc.npcMood==Mood.mad)
         {
             uniqueDialogue = madDialogue;

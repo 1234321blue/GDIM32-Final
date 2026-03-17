@@ -46,7 +46,6 @@ public class NPC : MonoBehaviour
 
     void Update()
     {
-        MoodIndication();
         if(hasItem==false&&hasTalked==true)
         {
             startingDialogue = waitingDialogue;
@@ -171,7 +170,7 @@ public class NPC : MonoBehaviour
         Gizmos.color=Color.red;
         Gizmos.DrawWireSphere(transform.position + transform.forward * checkDistance, checkRad);
     }
-    private void MoodIndication()
+    public void MoodIndication()
     {
         if(!hasMilk)
         {
