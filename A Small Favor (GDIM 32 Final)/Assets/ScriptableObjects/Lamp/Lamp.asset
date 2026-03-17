@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fb2552b0b02c4206bd25983fb7e2987, type: 3}
+  m_Name: Lamp
+  m_EditorClassIdentifier: 
+  npcDialogue:
+  - ah turn it down
+  - the light from this is blinding
+  playerResponses:
+  - what do you mean? the lights not even on
+  - heh you mean the light radiating from me? heh
+  - But what if i want to turn it up wooooo
+  npcReplies:
+  - {fileID: 11400000, guid: 926f5626dd0094a9fa7d352f363e6674, type: 2}
+  - {fileID: 11400000, guid: 5f126b695a08c4500a0d98492527d860, type: 2}
+  - {fileID: 11400000, guid: d362bd8588ce14c4eac0cff163bbd2e2, type: 2}

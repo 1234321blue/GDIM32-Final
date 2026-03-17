@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fb2552b0b02c4206bd25983fb7e2987, type: 3}
+  m_Name: Book
+  m_EditorClassIdentifier: 
+  npcDialogue:
+  - Well whaddya know?
+  - i didn't take you for much of a reader
+  playerResponses:
+  - oh well actually thats kind of mean and you hurt my feelings a lot there and
+    i would really like it if you apologized to me please and thank you
+  - yeah well i didn't take you for much of a moocher, but here we are
+  - aw shucks, you really mean that?
+  npcReplies:
+  - {fileID: 11400000, guid: f8cd45e878a9a4c52b71f8e74dffc1fc, type: 2}
+  - {fileID: 11400000, guid: 15caef1bee293470bbcbd8636c494dcf, type: 2}
+  - {fileID: 11400000, guid: 70615513703ee4dbb97d27c9efd5b642, type: 2}

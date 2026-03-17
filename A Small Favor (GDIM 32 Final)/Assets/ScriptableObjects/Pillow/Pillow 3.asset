@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fb2552b0b02c4206bd25983fb7e2987, type: 3}
+  m_Name: Pillow 3
+  m_EditorClassIdentifier: 
+  npcDialogue:
+  - (hi disembodied voice here)
+  - (nice to meet you or good to see ya again)
+  - (WHAT DO YOU MEAN YOU DIDNT WANT TO DO THE PILLOW FIGHT?)
+  - (EVERYONE LOVES PILLOW FIGHTS)
+  - (WHAT ARE YOU SOME SORT OF JOYLESS MONSTER DEVOID OF FEELING?)
+  - (Look i dont usually do this but this is just unacceptable)
+  - (im sending you back to when u made that choice)
+  - (so u can make the RIGHT decision)
+  - (capiche?)
+  playerResponses:
+  - yes
+  - ok
+  - i really want to say no but i have no choice but to say yes
+  npcReplies:
+  - {fileID: 11400000, guid: e1b05b30aa44b475dac40e08019c3ac7, type: 2}
+  - {fileID: 11400000, guid: e1b05b30aa44b475dac40e08019c3ac7, type: 2}
+  - {fileID: 11400000, guid: e1b05b30aa44b475dac40e08019c3ac7, type: 2}

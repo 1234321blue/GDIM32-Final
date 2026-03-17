@@ -4,7 +4,7 @@ using System.Globalization;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
-public enum Mood {happy, fine, mad}
+public enum Mood {happy, fine, mad, pillow}
 public class NPC : MonoBehaviour
 {
     //[SerializeField] private Transform npcTransform;
@@ -21,6 +21,8 @@ public class NPC : MonoBehaviour
     //[SerializeField] private GameObject keybindText2;
     [SerializeField] private GameObject winScreen;
     [SerializeField] private GameObject loseScreen;
+    [SerializeField] private GameObject pillowScreen;
+    [SerializeField] private GameObject crosshair;
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioClip cueSong;
     public Mood npcMood{get; private set;} = Mood.happy; 
@@ -123,6 +125,12 @@ public class NPC : MonoBehaviour
                 musicSource.Play();
             }
 
+            if(line == "   ")
+            {
+                npcMood = Mood.pillow;
+                EndGame();
+            }
+
             dialogueUI.ShowDialogue(line);
             currentLine++;
         }
@@ -195,13 +203,23 @@ public class NPC : MonoBehaviour
     private void EndGame()
     {
         Cursor.lockState = CursorLockMode.None;
+        Locator.Instance.player.enabled=false;
+        this.enabled=false;
+        interactableText.SetActive(false);
+        tutorialText.enabled=false;
+        tutorialText2.SetActive(false);
+        crosshair.SetActive(false);
         if(npcMood==Mood.mad)
         {
             loseScreen.SetActive(true);
         }
-        else
+        else if (npcMood==Mood.happy)
         {
             winScreen.SetActive(true);
+        }
+        else if(npcMood==Mood.pillow)
+        {
+            pillowScreen.SetActive(true);
         }
     }
 }

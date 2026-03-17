@@ -131,6 +131,18 @@ public class PlayerController : MonoBehaviour
                 heldItem.transform.localPosition = Vector3.zero;
                 heldItem.transform.localRotation = Quaternion.identity;
 
+                if(heldItem.transform.childCount>0)
+                {
+
+                    foreach(Transform child in heldItem.transform )
+                    {
+                        if (!child.CompareTag("largeitem")||!child.CompareTag("item"))
+                        {
+                        child.gameObject.SetActive( false );
+                        }
+                    }
+                }
+
                 Collider col = heldItem.GetComponent<Collider>();
                 if (col != null)
                 col.enabled = false;
